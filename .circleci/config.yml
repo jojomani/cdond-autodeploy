@@ -18,8 +18,8 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
-        command: cd /cdond-autodeploy/frontend
           steps:
+            command: cd /cdond-autodeploy/frontend
             - run: npm install
             - run: npm test
 
@@ -30,8 +30,8 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
-        command: cd /cdond-autodeploy/backend
           steps:
+            command: cd /cdond-autodeploy/backend
             - run: npm install
             - run: npm test
 
