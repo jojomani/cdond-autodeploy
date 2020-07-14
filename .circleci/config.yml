@@ -1,16 +1,5 @@
 version: 2.1
 
-jobs:
-  hello-world:
-    docker:
-      - image: amazon/aws-cli
-    steps:
-      - checkout
-      - run:
-          name: Say Hello
-          command: 
-            echo "Hello World"
-
   node: circleci/node@1.1.6
   build-and-test:
     executor:
@@ -23,7 +12,6 @@ jobs:
             - run: npm install
             - run: npm test
 
-  node: circleci/node@1.1.6
   build-and-test:
     executor:
       name: node/default
@@ -34,8 +22,3 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
-
-workflows:
-  default:
-    jobs:
-      - hello-world
