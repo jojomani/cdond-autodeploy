@@ -11,9 +11,7 @@ jobs:
           command: |
             echo "Hello World"
 
-orbs:
   node: circleci/node@1.1.6
-jobs:
   build-and-test:
     executor:
       name: node/default
