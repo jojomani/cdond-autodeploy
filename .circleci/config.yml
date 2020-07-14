@@ -10,7 +10,7 @@ jobs:
           name: Say Hello
           command: |
             echo "Hello World"
-version: 2.1
+
 orbs:
   node: circleci/node@1.1.6
 jobs:
