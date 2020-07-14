@@ -12,3 +12,7 @@ jobs:
           steps:
             - run: npm install
             - run: npm test
+workflows:
+  test_my_app:
+    jobs:
+      - test
