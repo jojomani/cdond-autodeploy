@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Say Hello
-          command: |
+          command: 
             echo "Hello World"
 
   node: circleci/node@1.1.6
@@ -18,6 +18,19 @@ jobs:
     steps:
       - checkout
       - node/with-cache:
+        command: cd /cdond-autodeploy/frontend
+          steps:
+            - run: npm install
+            - run: npm test
+
+  node: circleci/node@1.1.6
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+        command: cd /cdond-autodeploy/backend
           steps:
             - run: npm install
             - run: npm test
