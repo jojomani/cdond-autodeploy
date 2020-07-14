@@ -16,10 +16,10 @@ jobs:
     executor:
       name: node/default
     steps:
+      working_directory: ~/cdond-autodeploy/frontend
       - checkout
       - node/with-cache:
           steps:
-            command: cd /cdond-autodeploy/frontend
             - run: npm install
             - run: npm test
 
@@ -28,10 +28,10 @@ jobs:
     executor:
       name: node/default
     steps:
+      working_directory: ~/cdond-autodeploy/backend
       - checkout
       - node/with-cache:
           steps:
-            command: cd /cdond-autodeploy/backend
             - run: npm install
             - run: npm test
 
